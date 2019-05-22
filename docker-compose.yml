@@ -1,7 +1,7 @@
 version:  '3'
 
 services:
-  mysql-we-are-builders:
+  mysql:
     image: mysql:8.0
     restart: on-failure
     environment:
@@ -27,3 +27,5 @@ services:
     env_file:
       - .env
     user: 1000:1000
+    depends_on:
+      - mysql
